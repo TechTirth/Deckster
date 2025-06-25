@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddCardForm from "./components/AddCardForm";
 import CardList from "./components/CardList";
+import './App.css'
 
 export default function App() {
   const [cards, setCards] = useState([]);
@@ -27,9 +28,8 @@ export default function App() {
   };
 
   return (
-    <div className="app-bg">
-      <div className="container">
-        <h1 className="main-title">Deckster Cards</h1>
+    <div className="cards-bg">
+      <div>
         <AddCardForm onAdd={handleAdd} />
         <CardList cards={cards} onDelete={handleDelete} />
       </div>

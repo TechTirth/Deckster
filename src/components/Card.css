@@ -1,51 +1,93 @@
-.card {
-  background: rgba(255,255,255,0.95);
-  border: 2px solid #a78bfa;
-  border-radius: 18px;
-  box-shadow: 0 4px 20px #a78bfa33;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  min-height: 180px;
+.neon-card {
   position: relative;
-  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  background: rgba(24, 26, 31, 0.90); /* glass effect */
+  border-radius: 22px;
+  border: 1.5px solid rgba(255, 98, 0, 0.35); /* subtle neon orange */
+  box-shadow:
+    0 4px 32px 0 rgba(255, 98, 0, 0.18),
+    0 0 0 1.5px rgba(255, 98, 0, 0.22) inset;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-height: 280px;
+  transition: box-shadow 0.25s, border-color 0.25s, background 0.25s;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
 }
-.card:hover {
-  transform: scale(1.045) translateY(-8px);
-  box-shadow: 0 8px 32px #ec489955, 0 1.5px 6px #8b5cf655;
-  border-color: #ec4899;
-  z-index: 2;
+.neon-card:hover {
+  box-shadow:
+    0 8px 48px 0 rgba(255, 98, 0, 0.30),
+    0 0 0 2.5px #ff6200;
+  border-color: #ff6200;
+  background: rgba(24, 26, 31, 0.97);
+}
+.neon-card h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem 0;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.neon-card p {
+  color: #e4e4e4;
+  font-size: 1.13rem;
+  margin: 0 0 1.5rem 0;
 }
 .delete-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #f9a8d4;
-  color: #ec4899;
+  top: 20px;
+  right: 20px;
+  background: #ff6200;
+  color: #fff;
   border: none;
   border-radius: 50%;
   font-size: 1.3rem;
   width: 2.2rem;
   height: 2.2rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px #ec489955;
-  transition: background 0.15s, color 0.15s;
+  box-shadow: 0 2px 12px #ff6200cc;
+  transition: background 0.18s, color 0.18s;
+  z-index: 2;
 }
 .delete-btn:hover {
-  background: #ec4899;
+  background: #fff;
+  color: #ff6200;
+}
+.neon-card {
+  position: relative;
+  background: rgba(24, 26, 31, 0.90);
+  border-radius: 22px;
+  border: 1.5px solid rgba(255, 98, 0, 0.35);
+  box-shadow:
+    0 4px 32px 0 rgba(255, 98, 0, 0.18),
+    0 0 0 1.5px rgba(255, 98, 0, 0.22) inset;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-height: 280px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  /* --- Animation properties --- */
+  transition:
+    box-shadow 0.35s cubic-bezier(.4,2,.3,1),
+    border-color 0.28s cubic-bezier(.4,2,.3,1),
+    background 0.28s cubic-bezier(.4,2,.3,1),
+    transform 0.28s cubic-bezier(.4,2,.3,1);
+  will-change: transform, box-shadow, border-color, background;
 }
-.card-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #7c3aed;
-  margin-bottom: 0.7rem;
-  margin-top: 0.3rem;
-  word-break: break-word;
-}
-.card-desc {
-  color: #444;
-  font-size: 1.05rem;
-  word-break: break-word;
+.neon-card:hover {
+  transform: scale(1.055) translateY(-10px) rotate(-1deg);
+  box-shadow:
+    0 16px 56px 0 rgba(255, 98, 0, 0.35),
+    0 0 0 2.5px #ff6200,
+    0 0 24px 8px #ff620055;
+  border-color: #ff6200;
+  background: rgba(24, 26, 31, 0.97);
+  z-index: 2;
 }

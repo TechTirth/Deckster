@@ -1,36 +1,33 @@
-.add-card-form {
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #16181d; /* deep black */
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+}
+.cards-bg {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0%, #23242a 60%, #16181d 100%);
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 3rem 0;
 }
-.add-input {
-  padding: 0.7rem 1rem;
-  border: 2px solid #a78bfa;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  outline: none;
-  transition: border 0.2s;
-  min-width: 200px;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
 }
-.add-input:focus {
-  border-color: #ec4899;
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.add-btn {
-  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
-  color: #fff;
-  font-weight: bold;
-  padding: 0.7rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  box-shadow: 0 2px 8px #ec489955;
-  transition: background 0.2s, transform 0.1s;
-}
-.add-btn:hover {
-  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
-  transform: scale(1.07);
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
