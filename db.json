@@ -1,14 +1,3 @@
 {
-  "cards": [
-    {
-      "id": 1,
-      "title": "First Card",
-      "description": "This is the first card."
-    },
-    {
-      "id": 2,
-      "title": "Second Card",
-      "description": "This is the second card."
-    }
-  ]
+  "cards": []
 }
