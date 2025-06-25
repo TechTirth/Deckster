@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function App() {
   const [cards, setCards] = useState([]);
-  const [deletedCards, setDeletedCards] = useState([]);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   // Fetch cards from the mock API
   useEffect(() => {
@@ -12,47 +13,50 @@ export default function App() {
       .then(data => setCards(data));
   }, []);
 
-  
+  // Delete handler
   const handleDelete = async (id) => {
-    const cardToDelete = cards.find(card => card.id === id);
     await fetch(`http://localhost:3001/cards/${id}`, { method: "DELETE" });
     setCards(cards => cards.filter(card => card.id !== id));
-    setDeletedCards(deleted => [...deleted, cardToDelete]);
   };
 
-  
-  const handleRestore = async () => {
-   
-    for (const card of deletedCards) {
-      
-      const { id, ...rest } = card;
-      await fetch("http://localhost:3001/cards", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(rest),
-      });
-    }
-    
-    fetch("http://localhost:3001/cards")
-      .then(res => res.json())
-      .then(data => setCards(data));
-    setDeletedCards([]); 
+  // Add card handler
+  const handleAdd = async (e) => {
+    e.preventDefault();
+    if (!title.trim() || !description.trim()) return;
+    const res = await fetch("http://localhost:3001/cards", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, description }),
+    });
+    const newCard = await res.json();
+    setCards(cards => [...cards, newCard]);
+    setTitle("");
+    setDescription("");
   };
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-bold mb-6">Deckster Cards</h1>
-      <button
-        onClick={handleRestore}
-        disabled={deletedCards.length === 0}
-        className={`mb-6 px-4 py-2 rounded font-semibold transition ${
-          deletedCards.length === 0
-            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-            : "bg-blue-600 text-white hover:bg-blue-700"
-        }`}
-      >
-        Generate Them Back
-      </button>
+      <form onSubmit={handleAdd} className="mb-6 flex gap-2">
+        <input
+          className="border rounded px-2 py-1"
+          placeholder="Title"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+        />
+        <input
+          className="border rounded px-2 py-1"
+          placeholder="Description"
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+        />
+        <button
+          type="submit"
+          className="bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700"
+        >
+          Add Card
+        </button>
+      </form>
       <div className="flex flex-wrap gap-6">
         <AnimatePresence>
           {cards.map(card => (
