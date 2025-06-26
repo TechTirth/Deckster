@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddCardForm from "./components/AddCardForm";
 import CardList from "./components/CardList";
-import './App.css'
+import './styles/App.css'
 
 export default function App() {
   const [cards, setCards] = useState([]);

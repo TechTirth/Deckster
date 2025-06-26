@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./AddCardForm.css";
+import "../styles/AddCardForm.css";
 
 export default function AddCardForm({ onAdd }) {
   const [title, setTitle] = useState("");

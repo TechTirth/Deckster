@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimatePresence } from "framer-motion";
 import Card from "./Card";
-import "./CardList.css";
+import "../styles/CardList.css";
 
 export default function CardList({ cards, onDelete }) {
   return (

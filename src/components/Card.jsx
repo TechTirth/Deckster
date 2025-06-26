@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./Card.css";
+import "../styles/Card.css";
 
 const addVariants = {
   initial: { opacity: 0, y: 80, scale: 0.7, rotateX: 45 },
