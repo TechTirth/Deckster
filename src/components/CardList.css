@@ -14,3 +14,11 @@
     grid-template-columns: 1fr;
   }
 }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+  perspective: 1200px; /* Adds depth for 3D transforms */
+}
