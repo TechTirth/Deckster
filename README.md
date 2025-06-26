@@ -67,5 +67,9 @@ Visit [http://localhost:5173](http://localhost:5173) in your browser.
 ![image](https://github.com/user-attachments/assets/07633895-4938-4745-b77d-5c4c4e9ec553)
 
 
+https://github.com/user-attachments/assets/1c30bb17-a2f6-40bb-80f3-ec09e943632f
+
+
+
 Enjoy building and customizing your card-based UI!
 
