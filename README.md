@@ -1,12 +1,68 @@
-# React + Vite
+# Deckster
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React card UI project built with Vite, custom CSS, and a mock API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Steps Involved
 
-## Expanding the ESLint configuration
+1. **Created a new React project using Vite**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   Scaffolded the project for fast development and modern tooling.
+
+2. **Added the project to a GitHub repository**
+
+   Used git for version control and collaboration.
+
+3. **Styled the app using custom CSS**
+
+   All components and layouts use hand-written CSS for a unique look.
+
+4. **Set up a mock API with json-server**
+
+   Created a `db.json` file in the project root to store sample card data.
+
+5. **Started the mock API server**
+
+   - Ran `npx json-server --watch db.json --port 3001`
+   - The API is available at [http://localhost:3001/cards](http://localhost:3001/cards)
+   - Supports GET, POST, DELETE, and PUT/PATCH out of the box
+
+6. **Connected the React app to the mock API**
+
+   - Fetched card data from the API and displayed it in the UI.
+   - Added functionality to add and delete cards, updating both the UI and the database.
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+git clone https://github.com/TechTirth/Deckster.git
+cd deckster
+
+
+### 2. Install dependencies
+
+npm install
+
+
+### 3. Start the mock API server
+
+npx json-server --watch db.json --port 3001
+
+
+### 4. Start the React development server
+
+npm run dev
+
+
+### 5. Open the app
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+Enjoy building and customizing your card-based UI!
+
